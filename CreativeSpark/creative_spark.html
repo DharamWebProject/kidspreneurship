@@ -1,0 +1,2536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Spark — Kidspreneurship</title>
+  <meta name="description" content="Creative Spark is a hands-on creative-thinking journey designed to help children move beyond the first obvious answer, explore possibilities and build confidence in their own ideas.">
+  <link rel="icon" href="images/05-complete-kit-flat-lay.png" type="image/png">
+
+  <!-- Typography matching kidspreneurship.com: Poppins & Open Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:ital,wght@0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       AUTHENTIC BRAND TOKENS & CREATIVE SPARK PALETTE
+       Kidspreneurship Core + Playful Creative Atmosphere
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      /* Primary Brand Colors extracted from Kidspreneurship */
+      --color-primary-orange: #EE7203;
+      --color-orange-hover: #D96500;
+      --color-orange-soft: #FFF5EB;
+      --color-orange-glow: rgba(238, 114, 3, 0.28);
+
+      --color-royal-blue: #5B8DEF;
+      --color-blue-hover: #4374D8;
+      --color-blue-soft: #EEF4FD;
+      --color-blue-deep: #2B59C3;
+
+      --color-heading: #222222;
+      --color-navy: #182238;
+      --color-text-dark: #222222;
+      --color-text-body: #333333;
+      --color-text-muted: #555555;
+      --color-text-subtle: #777777;
+
+      /* Kidspreneurship Educational & Creative Palette */
+      --color-teal: #41B3A3;
+      --color-teal-soft: #EDF8F6;
+      --color-amber: #E59B3C;
+      --color-amber-soft: #FEF7EC;
+      --color-cyan: #3DA5D9;
+      --color-cyan-soft: #EDF7FC;
+      --color-purple: #9D72E1;
+      --color-purple-soft: #F5F0FC;
+      --color-rose: #E65F6B;
+      --color-rose-soft: #FDF1F2;
+
+      /* Surfaces & Dividers */
+      --bg-cream: #FAF8F5;
+      --bg-white: #FFFFFF;
+      --bg-warm-tint: #FFFDF9;
+      --border-light: #EAEAEA;
+      --border-subtle: #E2DFD8;
+
+      /* Typography */
+      --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      /* Radii & Shadows */
+      --radius-pill: 9999px;
+      --radius-card: 26px;
+      --radius-md: 16px;
+      --radius-sm: 10px;
+
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
+      --shadow-card: 0 12px 32px rgba(24, 34, 56, 0.07);
+      --shadow-hover: 0 20px 42px rgba(24, 34, 56, 0.12);
+      --shadow-orange-btn: 0 6px 20px rgba(238, 114, 3, 0.28);
+
+      --transition-smooth: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text-dark);
+      background-color: var(--bg-cream);
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--color-heading);
+      font-family: var(--font-heading);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ==========================================================================
+       BUTTON & CTA STYLES
+       ========================================================================== */
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--color-primary-orange);
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      padding: 15px 36px;
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      box-shadow: var(--shadow-orange-btn);
+      transition: var(--transition-smooth);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-cta:hover {
+      background-color: var(--color-orange-hover);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(238, 114, 3, 0.38);
+    }
+
+    .btn-cta:active {
+      transform: translateY(0);
+    }
+
+    .btn-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--bg-white);
+      color: var(--color-royal-blue);
+      border: 2px solid var(--color-royal-blue);
+      font-family: var(--font-heading);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      padding: 13px 32px;
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+      cursor: pointer;
+    }
+
+    .btn-cta-secondary:hover {
+      background-color: var(--color-blue-soft);
+      color: var(--color-blue-deep);
+      border-color: var(--color-blue-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(91, 141, 239, 0.18);
+    }
+
+    .btn-cta-secondary:active {
+      transform: translateY(0);
+    }
+
+    /* Playful pill eyebrow */
+    .creative-spark-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--color-orange-soft) 0%, var(--bg-white) 100%);
+      color: var(--color-primary-orange);
+      border: 1.5px solid var(--color-primary-orange);
+      padding: 6px 18px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 3px 10px rgba(238, 114, 3, 0.12);
+      margin-bottom: 22px;
+    }
+
+    .creative-spark-badge svg {
+      width: 14px;
+      height: 14px;
+      fill: var(--color-primary-orange);
+    }
+
+    /* ==========================================================================
+       SITE HEADER & NAVIGATION
+       ========================================================================== */
+    .site-header {
+      background: rgba(250, 248, 245, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 16px 0;
+      transition: var(--transition-smooth);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-seal {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--color-primary-orange) 0%, #F59E0B 100%);
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(238, 114, 3, 0.32);
+      flex-shrink: 0;
+    }
+
+    .brand-text-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: var(--font-heading);
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--color-heading);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-subtitle {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-royal-blue);
+      letter-spacing: 0.04em;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      list-style: none;
+    }
+
+    .header-nav a {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      transition: color 0.2s ease;
+      position: relative;
+    }
+
+    .header-nav a:hover {
+      color: var(--color-primary-orange);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-nav-cta {
+      padding: 10px 22px;
+      font-size: 0.86rem;
+    }
+
+    .burger-button {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      background: var(--bg-white);
+      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 0;
+    }
+
+    .burger-button span {
+      width: 20px;
+      height: 2px;
+      background: var(--color-heading);
+      transition: var(--transition-smooth);
+    }
+
+    /* ==========================================================================
+       1. HERO SECTION — PLAYFUL ASYMMETRIC COMPOSITION
+       Inspired by modern creative portfolio & product design
+       ========================================================================== */
+    .hero-section {
+      padding: 64px 0 76px;
+      position: relative;
+      background: radial-gradient(circle at 80% 20%, rgba(238, 114, 3, 0.06) 0%, transparent 60%),
+                  radial-gradient(circle at 10% 80%, rgba(91, 141, 239, 0.06) 0%, transparent 50%);
+    }
+
+    .hero-creative-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .hero-creative-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.35rem, 4.2vw, 3.5rem);
+      font-weight: 800;
+      color: var(--color-heading);
+      line-height: 1.18;
+      letter-spacing: -0.03em;
+      margin-bottom: 22px;
+    }
+
+    .hero-h1 .text-highlight-spark {
+      color: var(--color-primary-orange);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-h1 .text-highlight-spark::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: rgba(238, 114, 3, 0.18);
+      border-radius: 4px;
+      z-index: -1;
+    }
+
+    .hero-description-lead {
+      font-size: 1.14rem;
+      color: var(--color-text-body);
+      font-weight: 500;
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 580px;
+    }
+
+    .hero-action-cluster {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 34px;
+    }
+
+    /* Playful pill indicators under hero */
+    .hero-spark-pillars {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--border-subtle);
+      width: 100%;
+    }
+
+    .hero-pillar-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      padding: 7px 16px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-heading);
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--color-navy);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .pillar-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .dot-orange { background: var(--color-primary-orange); }
+    .dot-blue { background: var(--color-royal-blue); }
+    .dot-teal { background: var(--color-teal); }
+
+    /* Right visual composition */
+    .hero-visual-canvas {
+      position: relative;
+    }
+
+    .hero-photo-frame {
+      position: relative;
+      background: var(--bg-white);
+      border-radius: 32px;
+      padding: 16px;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 20px 48px -12px rgba(24, 34, 56, 0.14);
+      transition: var(--transition-smooth);
+    }
+
+    .hero-photo-frame:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 26px 54px -10px rgba(24, 34, 56, 0.18);
+    }
+
+    .hero-photo-frame img {
+      width: 100%;
+      height: auto;
+      border-radius: 22px;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Playful floating stickers */
+    .floating-sticker-idea {
+      position: absolute;
+      top: -18px;
+      right: -16px;
+      background: var(--bg-white);
+      border: 2px solid var(--color-royal-blue);
+      border-radius: var(--radius-pill);
+      padding: 8px 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-heading);
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--color-royal-blue);
+      box-shadow: 0 8px 24px rgba(91, 141, 239, 0.22);
+      transform: rotate(3deg);
+      animation: gentleFloat 4s ease-in-out infinite alternate;
+    }
+
+    .floating-sticker-quote {
+      position: absolute;
+      bottom: -18px;
+      left: -14px;
+      background: linear-gradient(135deg, #FFFFFF 0%, var(--color-orange-soft) 100%);
+      border: 2px solid var(--color-primary-orange);
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 28px rgba(238, 114, 3, 0.22);
+      transform: rotate(-2deg);
+    }
+
+    .floating-sticker-quote .sticker-title {
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--color-navy);
+      line-height: 1.2;
+    }
+
+    .floating-sticker-quote .sticker-sub {
+      font-size: 0.74rem;
+      color: var(--color-primary-orange);
+      font-weight: 700;
+    }
+
+    @keyframes gentleFloat {
+      0% { transform: translateY(0) rotate(3deg); }
+      100% { transform: translateY(-8px) rotate(5deg); }
+    }
+
+    /* ==========================================================================
+       2. CREATIVE PROCESS JOURNEY:
+       Imagine → Observe → Question → Combine → Change → Create → Improve
+       Styled as connected roadmap nodes matching the reference design
+       ========================================================================== */
+    .process-section {
+      padding: 72px 0 84px;
+      background: var(--bg-white);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+      position: relative;
+    }
+
+    .process-header-center {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 48px;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-primary-orange);
+      margin-bottom: 12px;
+    }
+
+    .process-main-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: var(--color-heading);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    /* The connected process timeline */
+    .journey-track-wrapper {
+      position: relative;
+      overflow-x: auto;
+      padding-bottom: 18px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-primary-orange) var(--border-light);
+    }
+
+    .journey-nodes-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      min-width: 960px;
+      position: relative;
+      padding: 24px 10px 10px;
+    }
+
+    /* Dotted connector bar behind nodes */
+    .journey-nodes-row::before {
+      content: '';
+      position: absolute;
+      top: 60px;
+      left: 50px;
+      right: 50px;
+      height: 3px;
+      background: repeating-linear-gradient(to right, var(--color-royal-blue) 0, var(--color-royal-blue) 8px, transparent 8px, transparent 16px);
+      z-index: 1;
+    }
+
+    .journey-node-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      padding: 0 8px;
+    }
+
+    .node-bubble-badge {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--bg-white);
+      border: 3px solid var(--color-royal-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(91, 141, 239, 0.16);
+      margin-bottom: 14px;
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .journey-node-item:hover .node-bubble-badge {
+      transform: translateY(-4px) scale(1.08);
+      box-shadow: 0 14px 28px rgba(91, 141, 239, 0.25);
+    }
+
+    .node-bubble-badge svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    /* Vibrant color theme per step */
+    .step-1 .node-bubble-badge { border-color: var(--color-primary-orange); color: var(--color-primary-orange); }
+    .step-2 .node-bubble-badge { border-color: var(--color-royal-blue); color: var(--color-royal-blue); }
+    .step-3 .node-bubble-badge { border-color: var(--color-purple); color: var(--color-purple); }
+    .step-4 .node-bubble-badge { border-color: var(--color-teal); color: var(--color-teal); }
+    .step-5 .node-bubble-badge { border-color: var(--color-rose); color: var(--color-rose); }
+    .step-6 .node-bubble-badge { border-color: var(--color-amber); color: var(--color-amber); }
+    .step-7 .node-bubble-badge { border-color: #10B981; color: #10B981; }
+
+    .node-order-num {
+      position: absolute;
+      top: -8px;
+      right: -6px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--color-navy);
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .node-step-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--color-heading);
+      margin-bottom: 4px;
+    }
+
+    .node-step-arrow {
+      color: var(--color-primary-orange);
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-top: 2px;
+    }
+
+    /* ==========================================================================
+       3. WHY CREATIVE THINKING MATTERS
+       Interactive thought cards layout
+       ========================================================================== */
+    .why-section {
+      padding: 92px 0;
+      position: relative;
+    }
+
+    .section-title-wrap {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 48px;
+    }
+
+    .section-h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 3.4vw, 2.75rem);
+      font-weight: 800;
+      color: var(--color-heading);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+
+    .section-subhead {
+      font-family: var(--font-heading);
+      font-size: 1.18rem;
+      font-weight: 600;
+      color: var(--color-primary-orange);
+      margin-bottom: 12px;
+    }
+
+    .section-prompt-text {
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+      font-weight: 600;
+    }
+
+    .creative-questions-canvas {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto 48px;
+    }
+
+    .creative-question-box {
+      background: var(--bg-white);
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--radius-card);
+      padding: 30px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .creative-question-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: var(--color-royal-blue);
+      transition: var(--transition-smooth);
+    }
+
+    .creative-question-box:nth-child(2)::before { background: var(--color-amber); }
+    .creative-question-box:nth-child(3)::before { background: var(--color-teal); }
+    .creative-question-box:nth-child(4)::before { background: var(--color-primary-orange); }
+
+    .creative-question-box:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(91, 141, 239, 0.4);
+    }
+
+    .q-bubble-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: var(--color-blue-soft);
+      color: var(--color-royal-blue);
+      font-size: 1.3rem;
+      transition: var(--transition-smooth);
+    }
+
+    .creative-question-box:nth-child(2) .q-bubble-icon { background: var(--color-amber-soft); color: var(--color-amber); }
+    .creative-question-box:nth-child(3) .q-bubble-icon { background: var(--color-teal-soft); color: var(--color-teal); }
+    .creative-question-box:nth-child(4) .q-bubble-icon { background: var(--color-orange-soft); color: var(--color-primary-orange); }
+
+    .q-bubble-text {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-heading);
+      line-height: 1.42;
+    }
+
+    .why-closing-card {
+      background: linear-gradient(135deg, #FFFFFF 0%, var(--color-orange-soft) 100%);
+      border: 2px solid var(--color-primary-orange);
+      border-radius: var(--radius-card);
+      padding: 30px 38px;
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto;
+      box-shadow: 0 8px 24px rgba(238, 114, 3, 0.12);
+    }
+
+    .why-closing-text {
+      font-family: var(--font-heading);
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: var(--color-navy);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       4. WHAT YOUR CHILD WILL EXPLORE & SKILLS DEVELOPED
+       Playful exploration cards + colorful badge cloud
+       ========================================================================== */
+    .explore-skills-combo-zone {
+      padding: 92px 0;
+      background: var(--bg-white);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .explore-cards-flex {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 22px;
+      margin-top: 44px;
+      margin-bottom: 80px;
+    }
+
+    .explore-play-card {
+      background: var(--bg-cream);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-card);
+      padding: 26px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+    }
+
+    .explore-play-card:hover {
+      transform: translateY(-4px);
+      background: #FFFFFF;
+      box-shadow: var(--shadow-hover);
+      border-color: var(--color-royal-blue);
+    }
+
+    .explore-play-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .dot-amber { background: var(--color-amber-soft); color: var(--color-amber); }
+    .dot-blue { background: var(--color-blue-soft); color: var(--color-royal-blue); }
+    .dot-purple { background: var(--color-purple-soft); color: var(--color-purple); }
+    .dot-rose { background: var(--color-rose-soft); color: var(--color-rose); }
+    .dot-teal { background: var(--color-teal-soft); color: var(--color-teal); }
+    .dot-cyan { background: var(--color-cyan-soft); color: var(--color-cyan); }
+    .dot-orange { background: var(--color-orange-soft); color: var(--color-primary-orange); }
+
+    .explore-play-text {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-text-dark);
+      line-height: 1.55;
+      padding-top: 4px;
+    }
+
+    /* SKILLS DEVELOPED SECTION CONTAINER */
+    .skills-cluster-wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
+      background: linear-gradient(135deg, var(--bg-cream) 0%, #FFFFFF 100%);
+      border: 2px dashed var(--border-subtle);
+      border-radius: 32px;
+      padding: 44px 36px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .skills-heading-tag {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+      font-weight: 800;
+      color: var(--color-heading);
+      margin-bottom: 24px;
+    }
+
+    .skills-cloud-pills {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .skill-badge-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-white);
+      border: 1.5px solid var(--border-light);
+      padding: 10px 22px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-heading);
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--color-navy);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      transition: var(--transition-smooth);
+    }
+
+    .skill-badge-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-card);
+      border-color: var(--color-primary-orange);
+      color: var(--color-primary-orange);
+    }
+
+    .skill-badge-item .skill-sparkle {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-primary-orange);
+    }
+
+    .skills-cloud-item-1 .skill-sparkle { background: var(--color-primary-orange); }
+    .skills-cloud-item-2 .skill-sparkle { background: var(--color-royal-blue); }
+    .skills-cloud-item-3 .skill-sparkle { background: var(--color-teal); }
+    .skills-cloud-item-4 .skill-sparkle { background: var(--color-purple); }
+    .skills-cloud-item-5 .skill-sparkle { background: var(--color-amber); }
+    .skills-cloud-item-6 .skill-sparkle { background: var(--color-rose); }
+    .skills-cloud-item-7 .skill-sparkle { background: var(--color-cyan); }
+
+    .skills-exact-line {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      line-height: 1.9;
+      border-top: 1px solid var(--border-light);
+      padding-top: 18px;
+    }
+
+    /* ==========================================================================
+       5. INSIDE CREATIVE SPARK — INTERACTIVE ACTIVITY SLIDER / CAROUSEL
+       Smooth horizontal exploration with photos, controls, indicators
+       ========================================================================== */
+    .activities-slider-section {
+      padding: 96px 0;
+      position: relative;
+    }
+
+    .activities-nav-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 38px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .activities-left-header {
+      max-width: 650px;
+    }
+
+    .carousel-controls-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .carousel-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--bg-white);
+      border: 1.5px solid var(--border-subtle);
+      color: var(--color-navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+    }
+
+    .carousel-btn:hover {
+      background: var(--color-primary-orange);
+      border-color: var(--color-primary-orange);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(238, 114, 3, 0.28);
+    }
+
+    .carousel-btn:active {
+      transform: translateY(0);
+    }
+
+    /* Carousel viewport */
+    .activities-carousel-viewport {
+      display: flex;
+      gap: 28px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 10px 4px 28px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .activities-carousel-viewport::-webkit-scrollbar {
+      display: none;
+    }
+
+    .activity-slider-card {
+      flex: 0 0 calc(33.333% - 19px);
+      min-width: 310px;
+      scroll-snap-align: start;
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .activity-slider-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--color-royal-blue);
+    }
+
+    .activity-card-media {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      background: var(--bg-cream);
+    }
+
+    .activity-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .activity-slider-card:hover .activity-card-media img {
+      transform: scale(1.05);
+    }
+
+    .activity-card-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(24, 34, 56, 0.85);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+    }
+
+    .activity-card-body {
+      padding: 26px 26px 30px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .activity-card-h3 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--color-heading);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .activity-card-prompt {
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    /* Pagination dots */
+    .carousel-indicators-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--border-subtle);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      border: none;
+      padding: 0;
+    }
+
+    .carousel-dot.active {
+      width: 28px;
+      border-radius: var(--radius-pill);
+      background: var(--color-primary-orange);
+    }
+
+    /* ==========================================================================
+       6. WHAT THEY'LL WALK AWAY WITH — STANDOUT QUOTE SECTION
+       Playful, inspirational contrast layout
+       ========================================================================== */
+    .walkaway-section {
+      padding: 92px 0 100px;
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-cream) 100%);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+      position: relative;
+    }
+
+    .walkaway-showcase-box {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .walkaway-contrast-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .contrast-statement-card {
+      background: var(--bg-white);
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--radius-card);
+      padding: 28px 32px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contrast-statement-card.active-contrast {
+      background: linear-gradient(135deg, var(--color-blue-soft) 0%, #FFFFFF 100%);
+      border: 2px solid var(--color-royal-blue);
+    }
+
+    .contrast-lead-p {
+      font-family: var(--font-heading);
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--color-heading);
+      line-height: 1.45;
+    }
+
+    /* Standout golden quote card */
+    .walkaway-quote-billboard {
+      background: linear-gradient(135deg, #FFF6ED 0%, #FFFFFF 60%, var(--color-orange-soft) 100%);
+      border: 3px solid var(--color-primary-orange);
+      border-radius: 36px;
+      padding: 56px 48px;
+      text-align: center;
+      box-shadow: 0 16px 42px rgba(238, 114, 3, 0.16);
+      position: relative;
+    }
+
+    .quote-spark-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--color-primary-orange);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      box-shadow: 0 6px 18px rgba(238, 114, 3, 0.35);
+    }
+
+    .walkaway-h3-quote {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 3.2vw, 2.3rem);
+      font-weight: 800;
+      color: var(--color-primary-orange);
+      line-height: 1.35;
+      letter-spacing: -0.015em;
+    }
+
+    /* ==========================================================================
+       7. PRODUCT DETAILS SECTION
+       Modern Creative Card & Bento Specification Layout
+       ========================================================================== */
+    .product-section {
+      padding: 96px 0 106px;
+      position: relative;
+      background: radial-gradient(circle at 10% 40%, rgba(238, 114, 3, 0.04) 0%, transparent 45%),
+                  radial-gradient(circle at 90% 60%, rgba(91, 141, 239, 0.04) 0%, transparent 45%);
+    }
+
+    .product-details-canvas {
+      max-width: 1100px;
+      margin: 48px auto 0;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 36px;
+      align-items: stretch;
+    }
+
+    /* Left: Creative Product Showcase Card */
+    .product-preview-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-light);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: 0 14px 34px -8px rgba(24, 34, 56, 0.08), 0 4px 12px rgba(24, 34, 56, 0.03);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+      overflow: hidden;
+    }
+
+    .product-preview-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 44px -8px rgba(24, 34, 56, 0.12), 0 6px 18px rgba(238, 114, 3, 0.08);
+      border-color: rgba(91, 141, 239, 0.35);
+    }
+
+    .product-preview-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-primary-orange) 0%, var(--color-royal-blue) 100%);
+    }
+
+    .product-preview-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-top: 4px;
+    }
+
+    .product-preview-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--color-orange-soft);
+      color: var(--color-primary-orange);
+      border: 1px solid rgba(238, 114, 3, 0.25);
+      font-family: var(--font-heading);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+    }
+
+    .product-preview-format-tag {
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--color-royal-blue);
+      background: var(--color-blue-soft);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+    }
+
+    .product-image-container {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--bg-cream);
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+      margin-bottom: 18px;
+    }
+
+    .product-preview-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .product-preview-card:hover img {
+      transform: scale(1.025);
+    }
+
+    .product-preview-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background: var(--bg-cream);
+      border-radius: 16px;
+      padding: 12px 14px;
+      border: 1px solid var(--border-light);
+      gap: 8px;
+    }
+
+    .meta-pill-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--color-navy);
+    }
+
+    .meta-dot-accent {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-primary-orange);
+    }
+
+    /* Right: Creative Specifications Panel */
+    .product-specs-box {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-light);
+      border-radius: 28px;
+      padding: 32px 30px;
+      box-shadow: 0 14px 34px -8px rgba(24, 34, 56, 0.08), 0 4px 12px rgba(24, 34, 56, 0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+
+    .product-specs-box:hover {
+      box-shadow: 0 20px 44px -8px rgba(24, 34, 56, 0.12);
+      border-color: rgba(91, 141, 239, 0.35);
+    }
+
+    .specs-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+      margin-bottom: 24px;
+    }
+
+    /* Modern Spec Feature Tile with Hover Effects */
+    .spec-card-tile {
+      background: var(--bg-cream);
+      border: 1.5px solid var(--border-light);
+      border-radius: 18px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .spec-card-tile:hover {
+      transform: translateY(-3px);
+      background: #FFFFFF;
+      border-color: var(--color-royal-blue);
+      box-shadow: 0 10px 22px rgba(24, 34, 56, 0.08);
+    }
+
+    .spec-card-tile:hover .tile-icon-bubble {
+      transform: scale(1.08);
+    }
+
+    .tile-icon-bubble {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: var(--transition-smooth);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .tile-icon-bubble svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Theme Accents per Spec Tile */
+    .tile-amber .tile-icon-bubble { background: var(--color-amber-soft); color: var(--color-amber); }
+    .tile-amber:hover { border-color: var(--color-amber); }
+
+    .tile-blue .tile-icon-bubble { background: var(--color-blue-soft); color: var(--color-royal-blue); }
+    .tile-blue:hover { border-color: var(--color-royal-blue); }
+
+    .tile-purple .tile-icon-bubble { background: var(--color-purple-soft); color: var(--color-purple); }
+    .tile-purple:hover { border-color: var(--color-purple); }
+
+    .tile-teal .tile-icon-bubble { background: var(--color-teal-soft); color: var(--color-teal); }
+    .tile-teal:hover { border-color: var(--color-teal); }
+
+    .tile-cyan .tile-icon-bubble { background: var(--color-cyan-soft); color: var(--color-cyan); }
+    .tile-cyan:hover { border-color: var(--color-cyan); }
+
+    .tile-orange .tile-icon-bubble { background: var(--color-orange-soft); color: var(--color-primary-orange); }
+    .tile-orange:hover { border-color: var(--color-primary-orange); }
+
+    .tile-rose .tile-icon-bubble { background: var(--color-rose-soft); color: var(--color-rose); }
+    .tile-rose:hover { border-color: var(--color-rose); }
+
+    .tile-navy .tile-icon-bubble { background: #EEF2F6; color: var(--color-navy); }
+    .tile-navy:hover { border-color: var(--color-navy); }
+
+    .tile-content-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      overflow: hidden;
+    }
+
+    .spec-item-label {
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .spec-item-value {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--color-navy);
+      line-height: 1.35;
+      word-break: break-word;
+    }
+
+    .tile-orange .spec-item-value {
+      color: var(--color-primary-orange);
+    }
+
+    /* Product Details CTA Bar */
+    .product-cta-action-bar {
+      border-top: 1px dashed var(--border-subtle);
+      padding-top: 20px;
+    }
+
+    .product-buy-btn {
+      width: 100%;
+      text-align: center;
+      padding: 16px 36px;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .specs-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .spec-card-tile {
+        padding: 12px 14px;
+      }
+      .tile-icon-bubble {
+        width: 38px;
+        height: 38px;
+      }
+      .tile-icon-bubble svg {
+        width: 18px;
+        height: 18px;
+      }
+      .product-preview-card, .product-specs-box {
+        padding: 22px 18px;
+      }
+    }
+
+    /* ==========================================================================
+       8. CONTINUE BUILDING THEIR SKILLS
+       Interactive cards linking to My Leadership Journal & My Smart Habit
+       ========================================================================== */
+    .continue-skills-zone {
+      padding: 92px 0 100px;
+      background: var(--bg-white);
+      border-top: 1px solid var(--border-light);
+    }
+
+    .continue-cards-layout {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      max-width: 960px;
+      margin: 44px auto 0;
+    }
+
+    .companion-workbook-card {
+      background: var(--bg-cream);
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--radius-card);
+      padding: 38px 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+      box-shadow: var(--shadow-sm);
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+    }
+
+    .companion-workbook-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--color-royal-blue);
+      background: #FFFFFF;
+    }
+
+    .companion-tag-pill {
+      display: inline-block;
+      align-self: flex-start;
+      font-family: var(--font-heading);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-royal-blue);
+      background: var(--color-blue-soft);
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 14px;
+    }
+
+    .companion-h3-title {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-heading);
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+
+    .companion-explore-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-heading);
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--color-primary-orange);
+      margin-top: 18px;
+      transition: var(--transition-smooth);
+    }
+
+    .companion-workbook-card:hover .companion-explore-link {
+      color: var(--color-orange-hover);
+      gap: 12px;
+    }
+
+    /* ==========================================================================
+       SITE FOOTER
+       Kidspreneurship Global Footer Design
+       ========================================================================== */
+    .site-footer {
+      background: #182238;
+      color: #FFFFFF;
+      padding-top: 72px;
+      padding-bottom: 40px;
+      border-top: 1px solid #2A3650;
+    }
+
+    .footer-columns-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+
+    .footer-brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand-seal {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--color-primary-orange);
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+
+    .footer-brand-subtitle {
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .footer-desc-text {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      max-width: 380px;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-heading);
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 18px;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-nav-list a {
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-nav-list a:hover {
+      color: var(--color-primary-orange);
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.84rem;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE DESIGN (DESKTOP, TABLET, MOBILE)
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-creative-grid {
+        grid-template-columns: 1fr;
+        gap: 44px;
+      }
+
+      .activity-slider-card {
+        flex: 0 0 calc(50% - 14px);
+      }
+
+      .product-details-canvas {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .header-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-white);
+        flex-direction: column;
+        padding: 24px;
+        border-bottom: 1px solid var(--border-light);
+        box-shadow: var(--shadow-card);
+        gap: 16px;
+      }
+
+      .header-nav.mobile-active {
+        display: flex;
+      }
+
+      .burger-button {
+        display: flex;
+      }
+
+      .creative-questions-canvas {
+        grid-template-columns: 1fr;
+      }
+
+      .walkaway-contrast-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .continue-cards-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-columns-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .site-header {
+        padding: 14px 0;
+      }
+
+      .hero-section {
+        padding: 44px 0 56px;
+      }
+
+      .process-section, .why-section, .explore-skills-combo-zone, .activities-slider-section, .walkaway-section, .product-section, .continue-skills-zone {
+        padding: 60px 0;
+      }
+
+      .hero-action-cluster {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-cta, .btn-cta-secondary {
+        width: 100%;
+        text-align: center;
+      }
+
+      .activity-slider-card {
+        flex: 0 0 88%;
+      }
+
+      .walkaway-quote-billboard {
+        padding: 38px 24px;
+      }
+
+      .product-specs-box {
+        padding: 28px 20px;
+      }
+
+      .footer-bottom-bar {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SITE HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-block">
+        <div class="brand-seal" aria-hidden="true">CS</div>
+        <div class="brand-text-wrap">
+          <a href="#hero" style="text-decoration: none; color: inherit;">
+            <h1 class="brand-title">Creative Spark</h1>
+            <p class="brand-subtitle">Kidspreneurship Series</p>
+          </a>
+        </div>
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul class="header-nav" id="headerNavList">
+          <li><a href="#process">Creative Journey</a></li>
+          <li><a href="#why-creative-thinking-matters">Why It Matters</a></li>
+          <li><a href="#explore-and-skills">What They Explore</a></li>
+          <li><a href="#inside-creative-spark">Activities</a></li>
+          <li><a href="#product-details">Product Details</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#product-details" class="btn-cta btn-nav-cta">Buy &amp; Download</a>
+        <button type="button" class="burger-button" id="burgerToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         1. HERO SECTION
+         Creativity Is Something You Can Practise
+         Distinctive, playful hero composition with photo canvas & floating sparks
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-creative-grid">
+        
+        <div class="hero-creative-copy">
+          <div class="creative-spark-badge">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/></svg>
+            Hands-on Creative Thinking
+          </div>
+
+          <h1 class="hero-h1">Creativity Is Something You Can Practise</h1>
+          
+          <p class="hero-description-lead">Creative Spark is a hands-on creative-thinking journey designed to help children move beyond the first obvious answer, explore possibilities and build confidence in their own ideas.</p>
+          
+          <div class="hero-action-cluster">
+            <a href="#product-details" class="btn-cta">Buy &amp; Download</a>
+            <a href="#product-details" class="btn-cta-secondary">Preview Sample Pages</a>
+          </div>
+
+          <div class="hero-spark-pillars" aria-label="Core pillars">
+            <div class="hero-pillar-pill">
+              <span class="pillar-dot dot-orange"></span>
+              <span>7-Step Journey</span>
+            </div>
+            <div class="hero-pillar-pill">
+              <span class="pillar-dot dot-blue"></span>
+              <span>5 Creative Activities</span>
+            </div>
+            <div class="hero-pillar-pill">
+              <span class="pillar-dot dot-teal"></span>
+              <span>Digital Download</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual-canvas">
+          <div class="hero-photo-frame">
+            <img src="images/05-complete-kit-flat-lay.png" alt="Creative Spark activity workbook kit and materials" width="580" height="435">
+            
+            <div class="floating-sticker-idea" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+              <span>Explore Ideas</span>
+            </div>
+
+            <div class="floating-sticker-quote" aria-hidden="true">
+              <div style="font-size: 1.5rem;">✨</div>
+              <div>
+                <div class="sticker-title">Creative Spark</div>
+                <div class="sticker-sub">Page 2 Curriculum</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         2. CREATIVE PROCESS:
+         Imagine → Observe → Question → Combine → Change → Create → Improve
+         Styled as connected roadmap nodes directly inspired by process design
+         ========================================================================== -->
+    <section class="process-section" id="process">
+      <div class="container">
+        
+        <div class="process-header-center">
+          <h2 class="process-main-title">Creative-Thinking Journey</h2>
+        </div>
+
+        <div class="journey-track-wrapper" role="region" aria-label="Seven step creative thinking journey">
+          <div class="journey-nodes-row">
+            
+            <!-- Step 1: Imagine -->
+            <div class="journey-node-item step-1">
+              <div class="node-bubble-badge">
+                <span class="node-order-num">01</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
+              </div>
+              <h3 class="node-step-title">Imagine</h3>
+              <span class="node-step-arrow" aria-hidden="true">→</span>
+            </div>
+
+            <!-- Step 2: Observe -->
+            <div class="journey-node-item step-2">
+              <div class="node-bubble-badge">
+                <span class="node-order-num">02</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              </div>
+              <h3 class="node-step-title">Observe</h3>
+              <span class="node-step-arrow" aria-hidden="true">→</span>
+            </div>
+
+            <!-- Step 3: Question -->
+            <div class="journey-node-item step-3">
+              <div class="node-bubble-badge">
+                <span class="node-order-num">03</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              </div>
+              <h3 class="node-step-title">Question</h3>
+              <span class="node-step-arrow" aria-hidden="true">→</span>
+            </div>
+
+            <!-- Step 4: Combine -->
+            <div class="journey-node-item step-4">
+              <div class="node-bubble-badge">
+                <span class="node-order-num">04</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <h3 class="node-step-title">Combine</h3>
+              <span class="node-step-arrow" aria-hidden="true">→</span>
+            </div>
+
+            <!-- Step 5: Change -->
+            <div class="journey-node-item step-5">
+              <div class="node-bubble-badge">
+                <span class="node-order-num">05</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+              </div>
+              <h3 class="node-step-title">Change</h3>
+              <span class="node-step-arrow" aria-hidden="true">→</span>
+            </div>
+
+            <!-- Step 6: Create -->
+            <div class="journey-node-item step-6">
+              <div class="node-bubble-badge">
+                <span class="node-order-num">06</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+              </div>
+              <h3 class="node-step-title">Create</h3>
+              <span class="node-step-arrow" aria-hidden="true">→</span>
+            </div>
+
+            <!-- Step 7: Improve -->
+            <div class="journey-node-item step-7">
+              <div class="node-bubble-badge">
+                <span class="node-order-num">07</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <h3 class="node-step-title">Improve</h3>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. WHY CREATIVE THINKING MATTERS
+         Playful cards presenting children's thought questions
+         ========================================================================== -->
+    <section class="why-section" id="why-creative-thinking-matters">
+      <div class="container">
+        
+        <div class="section-title-wrap">
+          <span class="section-eyebrow">Beyond Obvious Answers</span>
+          <h2 class="section-h2">Why Creative Thinking Matters</h2>
+          <p class="section-subhead">Creativity isn't only about being artistic.</p>
+          <p class="section-prompt-text">It helps children ask:</p>
+        </div>
+
+        <div class="creative-questions-canvas">
+          <div class="creative-question-box">
+            <div class="q-bubble-icon" aria-hidden="true">💡</div>
+            <p class="q-bubble-text">What else could this be?</p>
+          </div>
+
+          <div class="creative-question-box">
+            <div class="q-bubble-icon" aria-hidden="true">🔍</div>
+            <p class="q-bubble-text">Is there another way?</p>
+          </div>
+
+          <div class="creative-question-box">
+            <div class="q-bubble-icon" aria-hidden="true">🧩</div>
+            <p class="q-bubble-text">What happens if I combine these ideas?</p>
+          </div>
+
+          <div class="creative-question-box">
+            <div class="q-bubble-icon" aria-hidden="true">🚀</div>
+            <p class="q-bubble-text">How could I make this better?</p>
+          </div>
+        </div>
+
+        <div class="why-closing-card">
+          <p class="why-closing-text">Creative Spark gives children repeated opportunities to practise exactly that.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. WHAT YOUR CHILD WILL EXPLORE & SKILLS DEVELOPED
+         Card checklist + Colorful skills cluster
+         ========================================================================== -->
+    <section class="explore-skills-combo-zone" id="explore-and-skills">
+      <div class="container">
+        
+        <div class="section-title-wrap">
+          <span class="section-eyebrow">Curriculum Highlights</span>
+          <h2 class="section-h2">What Your Child Will Explore</h2>
+          <p class="section-subhead">Activities encourage children to:</p>
+        </div>
+
+        <div class="explore-cards-flex">
+          <div class="explore-play-card">
+            <div class="explore-play-dot dot-amber" aria-hidden="true">●</div>
+            <p class="explore-play-text">generate multiple possibilities;</p>
+          </div>
+
+          <div class="explore-play-card">
+            <div class="explore-play-dot dot-blue" aria-hidden="true">●</div>
+            <p class="explore-play-text">observe familiar things differently;</p>
+          </div>
+
+          <div class="explore-play-card">
+            <div class="explore-play-dot dot-purple" aria-hidden="true">●</div>
+            <p class="explore-play-text">ask imaginative questions;</p>
+          </div>
+
+          <div class="explore-play-card">
+            <div class="explore-play-dot dot-rose" aria-hidden="true">●</div>
+            <p class="explore-play-text">combine unrelated ideas;</p>
+          </div>
+
+          <div class="explore-play-card">
+            <div class="explore-play-dot dot-teal" aria-hidden="true">●</div>
+            <p class="explore-play-text">transform existing ideas;</p>
+          </div>
+
+          <div class="explore-play-card">
+            <div class="explore-play-dot dot-cyan" aria-hidden="true">●</div>
+            <p class="explore-play-text">experiment without needing one “correct” answer;</p>
+          </div>
+
+          <div class="explore-play-card">
+            <div class="explore-play-dot dot-orange" aria-hidden="true">●</div>
+            <p class="explore-play-text">improve an idea through reflection.</p>
+          </div>
+        </div>
+
+        <!-- Skills Developed Section -->
+        <div class="skills-cluster-wrap" id="skills-developed">
+          <h2 class="skills-heading-tag">Skills Developed</h2>
+          
+          <div class="skills-cloud-pills" role="list">
+            <div class="skill-badge-item skills-cloud-item-1" role="listitem">
+              <span class="skill-sparkle"></span>
+              <span>Divergent Thinking</span>
+            </div>
+            <div class="skill-badge-item skills-cloud-item-2" role="listitem">
+              <span class="skill-sparkle"></span>
+              <span>Imagination</span>
+            </div>
+            <div class="skill-badge-item skills-cloud-item-3" role="listitem">
+              <span class="skill-sparkle"></span>
+              <span>Curiosity</span>
+            </div>
+            <div class="skill-badge-item skills-cloud-item-4" role="listitem">
+              <span class="skill-sparkle"></span>
+              <span>Idea Generation</span>
+            </div>
+            <div class="skill-badge-item skills-cloud-item-5" role="listitem">
+              <span class="skill-sparkle"></span>
+              <span>Creative Problem-Solving</span>
+            </div>
+            <div class="skill-badge-item skills-cloud-item-6" role="listitem">
+              <span class="skill-sparkle"></span>
+              <span>Experimentation</span>
+            </div>
+            <div class="skill-badge-item skills-cloud-item-7" role="listitem">
+              <span class="skill-sparkle"></span>
+              <span>Original Thinking</span>
+            </div>
+          </div>
+
+          <p class="skills-exact-line">Divergent Thinking • Imagination • Curiosity • Idea Generation • Creative Problem-Solving • Experimentation • Original Thinking</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. INSIDE CREATIVE SPARK — INTERACTIVE ACTIVITY SLIDER / CAROUSEL
+         Playful cards with authentic photography and navigation controls
+         ========================================================================== -->
+    <section class="activities-slider-section" id="inside-creative-spark">
+      <div class="container">
+        
+        <div class="activities-nav-row">
+          <div class="activities-left-header">
+            <span class="section-eyebrow">Playful Worksheets &amp; Prompts</span>
+            <h2 class="section-h2" style="margin-bottom: 8px;">Inside Creative Spark</h2>
+            <p class="section-subhead">Expect activities such as:</p>
+          </div>
+
+          <div class="carousel-controls-wrap">
+            <button type="button" class="carousel-btn" id="prevSlideBtn" aria-label="Previous activity card">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button type="button" class="carousel-btn" id="nextSlideBtn" aria-label="Next activity card">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- The Horizontal Carousel Viewport -->
+        <div class="activities-carousel-viewport" id="activitiesCarouselViewport" role="region" aria-label="Creative Activity Cards Carousel">
+          
+          <!-- Card 1: Unusual Uses -->
+          <article class="activity-slider-card">
+            <div class="activity-card-media">
+              <img src="images/activities-for-kids001-1024x577.jpg" alt="Child exploring unusual uses for everyday items" loading="lazy">
+              <span class="activity-card-tag">Activity 01</span>
+            </div>
+            <div class="activity-card-body">
+              <h3 class="activity-card-h3">Unusual Uses</h3>
+              <p class="activity-card-prompt">How many different uses can you imagine for one object?</p>
+            </div>
+          </article>
+
+          <!-- Card 2: Mix Two Ideas -->
+          <article class="activity-slider-card">
+            <div class="activity-card-media">
+              <img src="images/img_Programme-for-Students.jpg" alt="Children collaborating and mixing concepts together" loading="lazy">
+              <span class="activity-card-tag">Activity 02</span>
+            </div>
+            <div class="activity-card-body">
+              <h3 class="activity-card-h3">Mix Two Ideas</h3>
+              <p class="activity-card-prompt">Combine unrelated concepts to create something new.</p>
+            </div>
+          </article>
+
+          <!-- Card 3: Change It -->
+          <article class="activity-slider-card">
+            <div class="activity-card-media">
+              <img src="images/close-up-student-online-class01.jpg" alt="Student redesigning parts of a prototype" loading="lazy">
+              <span class="activity-card-tag">Activity 03</span>
+            </div>
+            <div class="activity-card-body">
+              <h3 class="activity-card-h3">Change It</h3>
+              <p class="activity-card-prompt">Take an existing product or idea and redesign one part.</p>
+            </div>
+          </article>
+
+          <!-- Card 4: Finish the Idea -->
+          <article class="activity-slider-card">
+            <div class="activity-card-media">
+              <img src="images/img_Franchise-Opportunity.jpg" alt="Hands-on learning materials and unfinished concepts" loading="lazy">
+              <span class="activity-card-tag">Activity 04</span>
+            </div>
+            <div class="activity-card-body">
+              <h3 class="activity-card-h3">Finish the Idea</h3>
+              <p class="activity-card-prompt">Complete an unfinished concept in your own way.</p>
+            </div>
+          </article>
+
+          <!-- Card 5: Make It Better -->
+          <article class="activity-slider-card">
+            <div class="activity-card-media">
+              <img src="images/virtual-classroom-study-space01.jpg" alt="Creative study space for reviewing and improving ideas" loading="lazy">
+              <span class="activity-card-tag">Activity 05</span>
+            </div>
+            <div class="activity-card-body">
+              <h3 class="activity-card-h3">Make It Better</h3>
+              <p class="activity-card-prompt">Review an idea and identify how you could improve it.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Indicators -->
+        <div class="carousel-indicators-bar" id="carouselIndicatorsBar" aria-hidden="true">
+          <button class="carousel-dot active" data-index="0" aria-label="Go to slide 1"></button>
+          <button class="carousel-dot" data-index="1" aria-label="Go to slide 2"></button>
+          <button class="carousel-dot" data-index="2" aria-label="Go to slide 3"></button>
+          <button class="carousel-dot" data-index="3" aria-label="Go to slide 4"></button>
+          <button class="carousel-dot" data-index="4" aria-label="Go to slide 5"></button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. WHAT THEY'LL WALK AWAY WITH
+         Standout quote billboard with high-impact typography
+         ========================================================================== -->
+    <section class="walkaway-section" id="what-theyll-walk-away-with">
+      <div class="container">
+        
+        <div class="section-title-wrap">
+          <span class="section-eyebrow">The Mindset Shift</span>
+          <h2 class="section-h2">What They'll Walk Away With</h2>
+        </div>
+
+        <div class="walkaway-showcase-box">
+          <div class="walkaway-contrast-cards">
+            <div class="contrast-statement-card">
+              <p class="contrast-lead-p">Not a collection of perfect drawings.</p>
+            </div>
+            <div class="contrast-statement-card active-contrast">
+              <p class="contrast-lead-p">A stronger belief that:</p>
+            </div>
+          </div>
+
+          <div class="walkaway-quote-billboard">
+            <div class="quote-spark-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            </div>
+            <h3 class="walkaway-h3-quote">“I can come up with ideas-and I don't have to stop at the first one.”</h3>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         7. PRODUCT DETAILS
+         Modern Creative Card & Bento Specification Layout
+         ========================================================================== -->
+    <section class="product-section" id="product-details">
+      <div class="container">
+        
+        <div class="section-title-wrap">
+          <span class="section-eyebrow">Publication Details</span>
+          <h2 class="section-h2">Product Details</h2>
+        </div>
+
+        <div class="product-details-canvas">
+          <!-- Left: Creative Product Showcase Card -->
+          <div class="product-preview-card">
+            <div class="product-preview-header">
+              <span class="product-preview-badge">Instant Download</span>
+              <span class="product-preview-format-tag">PDF Edition</span>
+            </div>
+
+            <div class="product-image-container">
+              <img src="images/06-eight-book-collection.png" alt="Creative Spark digital publication and workbook kit" width="500" height="375">
+            </div>
+
+            <div class="product-preview-meta-row" aria-hidden="true">
+              <span class="meta-pill-item"><span class="meta-dot-accent"></span>Activity Workbook</span>
+              <span class="meta-pill-item"><span class="meta-dot-accent" style="background: var(--color-royal-blue);"></span>Home &amp; Classroom</span>
+            </div>
+          </div>
+
+          <!-- Right: Modern Bento Spec Cards -->
+          <div class="product-specs-box">
+            <div class="specs-cards-grid">
+              
+              <!-- 1. Recommended Age -->
+              <div class="spec-card-tile tile-amber">
+                <div class="tile-icon-bubble" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </div>
+                <div class="tile-content-wrap">
+                  <span class="spec-item-label">Recommended Age:</span>
+                  <span class="spec-item-value">[Insert]</span>
+                </div>
+              </div>
+
+              <!-- 2. Format -->
+              <div class="spec-card-tile tile-blue">
+                <div class="tile-icon-bubble" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                </div>
+                <div class="tile-content-wrap">
+                  <span class="spec-item-label">Format:</span>
+                  <span class="spec-item-value">Digital Download</span>
+                </div>
+              </div>
+
+              <!-- 3. Pages / Activities -->
+              <div class="spec-card-tile tile-purple">
+                <div class="tile-icon-bubble" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                </div>
+                <div class="tile-content-wrap">
+                  <span class="spec-item-label">Pages / Activities:</span>
+                  <span class="spec-item-value">[Insert]</span>
+                </div>
+              </div>
+
+              <!-- 4. Estimated Time -->
+              <div class="spec-card-tile tile-teal">
+                <div class="tile-icon-bubble" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <div class="tile-content-wrap">
+                  <span class="spec-item-label">Estimated Time:</span>
+                  <span class="spec-item-value">[Insert]</span>
+                </div>
+              </div>
+
+              <!-- 5. Use -->
+              <div class="spec-card-tile tile-cyan">
+                <div class="tile-icon-bubble" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+                <div class="tile-content-wrap">
+                  <span class="spec-item-label">Use:</span>
+                  <span class="spec-item-value">Independent / Adult-Guided [confirm]</span>
+                </div>
+              </div>
+
+              <!-- 6. Price -->
+              <div class="spec-card-tile tile-orange">
+                <div class="tile-icon-bubble" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                </div>
+                <div class="tile-content-wrap">
+                  <span class="spec-item-label">Price:</span>
+                  <span class="spec-item-value">[Insert]</span>
+                </div>
+              </div>
+
+              <!-- 7. Printing -->
+              <div class="spec-card-tile tile-rose">
+                <div class="tile-icon-bubble" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                </div>
+                <div class="tile-content-wrap">
+                  <span class="spec-item-label">Printing:</span>
+                  <span class="spec-item-value">Home / Classroom printing</span>
+                </div>
+              </div>
+
+              <!-- 8. Licence -->
+              <div class="spec-card-tile tile-navy">
+                <div class="tile-icon-bubble" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </div>
+                <div class="tile-content-wrap">
+                  <span class="spec-item-label">Licence:</span>
+                  <span class="spec-item-value">[Insert]</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="product-cta-action-bar">
+              <a href="#hero" class="btn-cta product-buy-btn">Buy &amp; Download</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         8. CONTINUE BUILDING THEIR SKILLS
+         Verified links to My Leadership Journal & My Smart Habit
+         ========================================================================== -->
+    <section class="continue-skills-zone" id="continue-building-their-skills">
+      <div class="container">
+        
+        <div class="section-title-wrap">
+          <span class="section-eyebrow">The Curriculum Series</span>
+          <h2 class="section-h2">Continue Building Their Skills</h2>
+        </div>
+
+        <div class="continue-cards-layout">
+          <!-- Companion 1: My Leadership Journal -->
+          <a href="../Leadership/index.html" class="companion-workbook-card">
+            <div>
+              <span class="companion-tag-pill">Volume I &bull; Initiative &amp; Teamwork</span>
+              <h3 class="companion-h3-title">My Leadership Journal</h3>
+            </div>
+            <span class="companion-explore-link">Explore Leadership Journal &rarr;</span>
+          </a>
+
+          <!-- Companion 2: My Service Learning Journal (and My Smart Habit) -->
+          <div class="companion-workbook-card">
+            <div>
+              <span class="companion-tag-pill">Volume III &bull; Empathy &amp; Action</span>
+              <h3 class="companion-h3-title">My Service Learning Journal</h3>
+            </div>
+            <a href="../MySmartHabit/my_smart_habit.html" class="companion-explore-link" style="margin-top: 18px;">
+              Also explore My Smart Habit &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-columns-grid">
+        
+        <div>
+          <div class="footer-brand-wrap">
+            <div class="footer-brand-seal" aria-hidden="true">CS</div>
+            <div>
+              <div class="footer-brand-title">Creative Spark</div>
+              <div class="footer-brand-subtitle">Kidspreneurship Series</div>
+            </div>
+          </div>
+          <p class="footer-desc-text">
+            A hands-on creative-thinking journey designed to help children move beyond the first obvious answer, explore possibilities and build confidence in their own ideas.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">The Curriculum</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#process">Creative-Thinking Journey</a></li>
+            <li><a href="#why-creative-thinking-matters">Why Creative Thinking Matters</a></li>
+            <li><a href="#explore-and-skills">What Your Child Will Explore</a></li>
+            <li><a href="#skills-developed">Skills Developed</a></li>
+            <li><a href="#inside-creative-spark">Inside Creative Spark</a></li>
+            <li><a href="#what-theyll-walk-away-with">What They'll Walk Away With</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Publications</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#product-details">Product Details</a></li>
+            <li><a href="../Leadership/index.html">My Leadership Journal</a></li>
+            <li><a href="../MySmartHabit/my_smart_habit.html">My Smart Habit</a></li>
+            <li><a href="#continue-building-their-skills">My Service Learning Journal</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; <span id="currentYear">2026</span> Creative Spark &bull; Kidspreneurship Series. All rights reserved.
+        </div>
+        <div>
+          High-Resolution Digital Download &bull; Home / Classroom printing
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       PURE JAVASCRIPT: NAVIGATION & INTERACTIVE CAROUSEL
+       ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 1. Dynamic Year
+      var yearEl = document.getElementById('currentYear');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      // 2. Mobile Menu Toggle
+      var burger = document.getElementById('burgerToggleBtn');
+      var navMenu = document.getElementById('headerNavList');
+      if (burger && navMenu) {
+        burger.addEventListener('click', function() {
+          var isExpanded = burger.getAttribute('aria-expanded') === 'true';
+          burger.setAttribute('aria-expanded', !isExpanded);
+          navMenu.classList.toggle('mobile-active');
+        });
+
+        var links = navMenu.querySelectorAll('a');
+        links.forEach(function(link) {
+          link.addEventListener('click', function() {
+            navMenu.classList.remove('mobile-active');
+            burger.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      // 3. Activity Carousel Slider Logic
+      var viewport = document.getElementById('activitiesCarouselViewport');
+      var prevBtn = document.getElementById('prevSlideBtn');
+      var nextBtn = document.getElementById('nextSlideBtn');
+      var dots = document.querySelectorAll('.carousel-dot');
+
+      if (viewport && prevBtn && nextBtn) {
+        function getScrollStep() {
+          var firstCard = viewport.querySelector('.activity-slider-card');
+          if (firstCard) {
+            return firstCard.offsetWidth + 28; // width + gap
+          }
+          return 340;
+        }
+
+        prevBtn.addEventListener('click', function() {
+          viewport.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', function() {
+          viewport.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+        });
+
+        // Update active dot on scroll
+        function updateActiveDot() {
+          var scrollLeft = viewport.scrollLeft;
+          var step = getScrollStep();
+          var activeIndex = Math.round(scrollLeft / step);
+          if (activeIndex < 0) activeIndex = 0;
+          if (activeIndex >= dots.length) activeIndex = dots.length - 1;
+
+          dots.forEach(function(dot, idx) {
+            if (idx === activeIndex) {
+              dot.classList.add('active');
+            } else {
+              dot.classList.remove('active');
+            }
+          });
+        }
+
+        viewport.addEventListener('scroll', updateActiveDot, { passive: true });
+
+        // Dot click navigation
+        dots.forEach(function(dot) {
+          dot.addEventListener('click', function() {
+            var targetIdx = parseInt(dot.getAttribute('data-index'), 10);
+            var step = getScrollStep();
+            viewport.scrollTo({ left: targetIdx * step, behavior: 'smooth' });
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
